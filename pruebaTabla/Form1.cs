@@ -176,5 +176,18 @@ namespace pruebaTabla
                 }
             }
         }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            if(librosBindingSource.Find("Titulo", textBoxBuscar.Text) == -1)
+            {
+                MessageBox.Show("El libro no existe");
+                textBoxBuscar.Clear();
+            }
+            else
+            {
+                librosBindingSource.Position = librosBindingSource.Find("Titulo", textBoxBuscar.Text);
+            }
+        }
     }
 }
